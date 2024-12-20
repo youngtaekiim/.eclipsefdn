@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-pullpiri') {
+orgs.newOrg('automotive.pullpiri', 'eclipse-pullpiri') {
   settings+: {
     description: "",
     name: "Eclipse Pullpiri",
