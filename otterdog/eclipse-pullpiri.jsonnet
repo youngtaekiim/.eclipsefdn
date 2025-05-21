@@ -32,6 +32,11 @@ orgs.newOrg('automotive.pullpiri', 'eclipse-pullpiri') {
           requires_conversation_resolution: true,
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('HARBOR_PASSWORD') {
+          value: "12345678",
+        },
+      ],
     },
   ],
 } + {
