@@ -26,10 +26,22 @@ orgs.newOrg('automotive.pullpiri', 'eclipse-pullpiri') {
       has_projects: false,
       has_wiki: true,
       web_commit_signoff_required: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-pullpiri.github.io/pullpiri/",
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           requires_conversation_resolution: true,
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
         },
       ],
     },
